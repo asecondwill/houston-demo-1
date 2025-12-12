@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+resources :users, only: [:index] do
+  post :impersonate, on: :member
+  post :stop_impersonating, on: :collection
+end
+
   patch 'change_password', to: 'users#update_password'
   get 'change_password', to: 'users#password'
   patch 'settings', to: 'users#update_settings'
