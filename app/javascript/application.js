@@ -2,3 +2,6 @@
 import "controllers"
 import "custom/sprinkles"
   
+
+import "trix"
+import "@rails/actiontext"

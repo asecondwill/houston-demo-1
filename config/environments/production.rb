@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.active_storage.service = :aws
   config.action_mailer.smtp_settings = {
       :user_name => ENV['POSTMARK_API_KEY'],
       :password => ENV['POSTMARK_API_KEY'],

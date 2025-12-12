@@ -34,3 +34,10 @@
 /config/*.key
 
 .DS_Store
+
+  
+/public/storagepublic
+  
+
+/public/storeagepublic/*  
+  
