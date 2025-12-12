@@ -5,3 +5,7 @@ import "custom/sprinkles"
 
 import "trix"
 import "@rails/actiontext"
+import  'popper' 
+  
+import  'bootstrap' 
+  

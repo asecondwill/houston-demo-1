@@ -8,3 +8,7 @@ pin_all_from 'app/javascript/custom', under: 'custom'
   
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
+pin 'bootstrap', to: 'bootstrap.min.js'
+  
+pin 'popper', to: 'popper.js'
+  
