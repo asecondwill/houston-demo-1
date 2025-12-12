@@ -9,3 +9,13 @@ import  'popper'
   
 import  'bootstrap' 
   
+import  'tom-select'
+addEventListener("turbo:load", (event) => {
+  console.log('page loaded');
+  document.querySelectorAll('.select-advanced').forEach((el)=>{
+    let settings = {};
+    new TomSelect(el,settings);
+  });
+})  
+
+  

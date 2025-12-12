@@ -12,3 +12,5 @@ pin 'bootstrap', to: 'bootstrap.min.js'
   
 pin 'popper', to: 'popper.js'
   
+pin "tom-select", to: "https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/js/tom-select.complete.min.js"
+  
