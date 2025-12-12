@@ -1,1 +1,28 @@
 // Sassy
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+@import "application/_variables";
+@import "bootstrap";
+
+@import "trix";
+@import "shared";
+
+@import "vendor/tom_select";
+
+@include media-breakpoint-up(md) { 
+  .sidebar-wrapper{
+    min-height: 100vh !important;
+  }
+}
+
+div.actions{
+  @extend .border-top;
+  @extend .text-end;
+  @extend .pt-3;
+}
+td.actions, th.actions{
+  @extend .text-end;
+  a{
+    margin-left: 10px;
+  }
+}

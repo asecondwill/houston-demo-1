@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example.com</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="pt-5">
+    <%= render 'shared/site/header' %>
+    <div class="bg-light pt-3 overflow-y-auto">
+      <%= render 'shared/site/breadcrumbs' %>
+    </div>    
+    <div id="devise" class="bg-light">
+      <div class="container devise-container" >   
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'shared/site/footer' %>
+  </body>
+</html>

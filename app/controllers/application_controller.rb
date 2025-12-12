@@ -1,7 +1,23 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
+ 
+  around_action :set_time_zone, if: :current_user
+  impersonates :user
 
-  # Changes to the importmap will invalidate the etag for HTML responses
-  stale_when_importmap_changes
+  include Pagy::Backend
+
+  include Pundit::Authorization
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  private
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_back(fallback_location: root_path)
+  end
+ 
+  
+  def set_time_zone(&block)
+    Time.use_zone(current_user.time_zone, &block)
+  end  
 end

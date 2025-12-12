@@ -1,0 +1,33 @@
+<nav class=" sticky-top bg-white mb-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+          <button class="nav-link px-3 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">             
+            <i class="bi-list"></i>             
+          </button>
+      </div>
+      <div class="col-10 text-end">
+          <div class=" dropdown-center ">
+          <button class="btn btn-outline dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <% if current_user && current_user.name %>
+              <%= current_user.name.initials %>
+            <% else %>
+              You
+            <% end %>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<%= settings_path %>">Settings</a></li>
+            <li><a class="dropdown-item" href="<%= change_password_path %>">Change Passsword</a></li>
+            <% unless current_user == true_user %>              
+              <li><%= link_to "Stop Impersonating", stop_impersonating_users_path, data: {turbo_method: :post}, class: 'dropdown-item' %></li>
+            <% end %>
+          <li><hr class="dropdown-divider"></li>
+          <li>        
+            <%= button_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item btn-link"  %>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>                         
+  </div>
+</nav>
