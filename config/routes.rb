@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  patch 'change_password', to: 'users#update_password'
+  get 'change_password', to: 'users#password'
+  patch 'settings', to: 'users#update_settings'
+  get 'settings', to: 'users#settings'
   devise_for :users
   get 'dash' => 'dashboards#home', as: :user_root 
   root to: 'landings#home'
