@@ -1,17 +1,11 @@
-<div id="<%= dom_id boat %>">
-  <div>
-    <strong>Name:</strong>
-    <%= boat.name %>
-  </div>
 
-  <div>
-    <strong>Description:</strong>
-    <%= boat.description %>
-  </div>
-
-  <div>
-    <strong>Length:</strong>
-    <%= boat.length %>
-  </div>
-
-</div>
+<tr id="<%= dom_id boat %>">
+  <td><%= boat.name %></td>
+  <td><%= boat.description %></td>
+  <td><%= boat.length %></td>
+  <td>
+    <%= link_to "Show", boat, class: "btn btn-sm btn-outline-primary" %>
+    <%= link_to "Edit", edit_boat_path(boat), class: "btn btn-sm btn-outline-secondary" %>
+    <%= link_to "Destroy", boat, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+  </td>
+</tr>

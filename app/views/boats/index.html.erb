@@ -4,13 +4,21 @@
 
 <h1>Boats</h1>
 
-<div id="boats">
-  <% @boats.each do |boat| %>
-    <%= render boat %>
-    <p>
-      <%= link_to "Show this boat", boat %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "New boat", new_boat_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Length</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boats.each do |boat| %>
+      <%= render partial: "boat", locals: { boat: boat } %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New boat", new_boat_path, class: "btn btn-primary" %>
