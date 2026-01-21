@@ -5,6 +5,6 @@
   <td>
     <%= link_to "Show", boat, class: "btn btn-sm btn-outline-primary" %>
     <%= link_to "Edit", edit_boat_path(boat), class: "btn btn-sm btn-outline-secondary" %>
-    <%= link_to "Destroy", boat, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+    <%= link_to "Destroy", boat, data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
   </td>
 </tr>
