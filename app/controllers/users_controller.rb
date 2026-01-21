@@ -1,26 +1,24 @@
 class UsersController < ApplicationController
   # add_breadcrumb "home", :root_path
-  before_action :authenticate_user!  
+  before_action :authenticate_user!
   add_breadcrumb "Dashboard", :user_root_path
 
   def index
-    
     add_breadcrumb "Users", :users_path
     @users = User.all
   end
-  
+
   def settings
     add_breadcrumb "Settings", :settings_path
     @user = current_user
   end
 
   def update_settings
-   
     @user = current_user
     if @user.update(user_params)
-      redirect_to  settings_path, notice: "Member was successfully updated."     
+      redirect_to settings_path, notice: "Member was successfully updated."
     else
-      render :settings, status: :unprocessable_entity    
+      render :settings, status: :unprocessable_entity
     end
   end
 
@@ -32,9 +30,9 @@ class UsersController < ApplicationController
   def update_password
     @user = current_user
     if @user.update(params.require(:user).permit(:password))
-      redirect_to  change_password_path, notice: "Member was successfully updated."     
+      redirect_to change_password_path, notice: "Member was successfully updated."
     else
-      render :password, status: :unprocessable_entity    
+      render :password, status: :unprocessable_entity
     end
   end
 

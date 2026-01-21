@@ -3,15 +3,15 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.active_storage.service = :aws
   config.action_mailer.smtp_settings = {
-      :user_name => ENV['POSTMARK_API_KEY'],
-      :password => ENV['POSTMARK_API_KEY'],
-      :domain => 'example.com',
-      :address => 'smtp.postmarkapp.com',
-      :port => 587,
-      :authentication => :plain,
-      :enable_starttls_auto => true
+      user_name: ENV["POSTMARK_API_KEY"],
+      password: ENV["POSTMARK_API_KEY"],
+      domain: "example.com",
+      address: "smtp.postmarkapp.com",
+      port: 587,
+      authentication: :plain,
+      enable_starttls_auto: true
     }
-  host = ENV['IS_STAGING'] ? 'example-staging.herokuapp.com' : 'example.com'
+  host = ENV["IS_STAGING"] ? "example-staging.herokuapp.com" : "example.com"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

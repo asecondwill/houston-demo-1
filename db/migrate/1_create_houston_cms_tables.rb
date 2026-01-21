@@ -9,7 +9,7 @@ class CreateHoustonCmsTables < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-   
+
     create_table :pages do |t|
       t.string :title
       t.text :content
@@ -22,7 +22,7 @@ class CreateHoustonCmsTables < ActiveRecord::Migration[4.2]
 
       t.timestamps
     end
-   
+
 
     create_table :blockcontents do |t|
       t.text :content
@@ -89,10 +89,9 @@ class CreateHoustonCmsTables < ActiveRecord::Migration[4.2]
       t.string :name
       t.string :title
       t.text :alt
-      
+
 
       t.timestamps
     end
-
   end
 end

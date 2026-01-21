@@ -12,4 +12,3 @@ Time::DATE_FORMATS[:short_civillian] = ->(date) { date.strftime("%l:%M%P #{date.
 Time::DATE_FORMATS[:long_civillian] = ->(date) { date.strftime("%l:%M%P #{date.day.ordinalize} %B %Y") }
 Time::DATE_FORMATS[:longer_civillian] = ->(date) { date.strftime("%l:%M%P %a #{date.day.ordinalize} %B %Y") }
 Time::DATE_FORMATS[:full_civillian] = ->(date) { date.strftime("%l:%M%P %A #{date.day.ordinalize} %B %Y") }
-

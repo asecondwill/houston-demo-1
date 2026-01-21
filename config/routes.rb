@@ -23,5 +23,6 @@ end
 
     # Defines the root path route ("/")
     # root "posts#index"
+    resources :boats
     resources :pages, only: [ :index, :show ]
 end

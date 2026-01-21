@@ -3,6 +3,5 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
   def home
     @boo = "me"
-    
   end
 end

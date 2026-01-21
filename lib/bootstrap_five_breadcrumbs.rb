@@ -1,12 +1,12 @@
 class BootstrapFiveBreadcrumbs < BreadcrumbsOnRails::Breadcrumbs::SimpleBuilder
   def render
-    return '' if @elements.size == 0
+    return "" if @elements.size == 0
 
     @options[:outer_tag] ||= :ol
     @options[:tag] ||= :li
     @options[:separator] ||= ""
 
-    @context.content_tag(@options[:outer_tag], class: 'breadcrumb') do
+    @context.content_tag(@options[:outer_tag], class: "breadcrumb") do
       @elements.collect do |element|
         render_element(element)
       end.join(@options[:separator]).html_safe

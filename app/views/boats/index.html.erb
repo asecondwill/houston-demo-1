@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Boats" %>
+
+
+<h1>Boats</h1>
+
+<%= search_form_for @q, url: boats_path, method: :get, html: { class: "mb-3" } do |f| %>
+  <div class="input-group mb-3">
+    <%= f.label :name_cont, "Name", class: "input-group-text" %>
+    <%= f.search_field :name_cont, class: "form-control", placeholder: "Search by name" %>
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </div>
+<% end %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Length</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boats.each do |boat| %>
+      <%= render partial: "boat", locals: { boat: boat } %>
+    <% end %>
+  </tbody>
+</table>
+
+<% if defined?(@pagy) && @pagy %>
+  <nav aria-label="Boats pagination">
+    <%== pagy_nav(@pagy) %>
+  </nav>
+<% end %>
+<%= link_to "New boat", new_boat_path, class: "btn btn-primary" %>
