@@ -30,4 +30,9 @@
   </tbody>
 </table>
 
+<% if defined?(@pagy) && @pagy %>
+  <nav aria-label="Boats pagination">
+    <%== pagy_nav(@pagy) %>
+  </nav>
+<% end %>
 <%= link_to "New boat", new_boat_path, class: "btn btn-primary" %>
