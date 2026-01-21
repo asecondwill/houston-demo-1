@@ -8,13 +8,11 @@ module BootstrapHelper
     }.stringify_keys[flash_type.to_s] || flash_type.to_s
   end
 
-  def pillify_boolean(value, yes_text = 'YES', no_text = 'NO')
+  def pillify_boolean(value, yes_text = "YES", no_text = "NO")
     if value
       "<span class='badge rounded-pill text-bg-success'>#{yes_text}</span>".html_safe
     else
       "<span class='badge rounded-pill text-bg-secondary'>#{no_text}</span>".html_safe
     end
   end
-
-  
 end
