@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
-  length: 1
+  name: Sailboat Alpha
+  description: Compact cruising sailboat suitable for coastal trips.
+  length: 24
 
 two:
-  name: MyString
-  description: MyText
-  length: 1
+  name: Speedboat Beta
+  description: Lightweight speedboat designed for short lake runs.
+  length: 18
