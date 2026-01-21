@@ -4,7 +4,7 @@ class BoatsController < ApplicationController
   # GET /boats or /boats.json
   def index
     @q = Boat.ransack(params[:q])
-    @boats = @q.result
+    @pagy, @boats = pagy(@q.result)
   end
 
   # GET /boats/1 or /boats/1.json
