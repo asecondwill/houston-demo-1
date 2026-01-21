@@ -3,7 +3,8 @@ class BoatsController < ApplicationController
 
   # GET /boats or /boats.json
   def index
-    @boats = Boat.all
+    @q = Boat.ransack(params[:q])
+    @boats = @q.result
   end
 
   # GET /boats/1 or /boats/1.json

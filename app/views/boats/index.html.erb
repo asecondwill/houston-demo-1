@@ -2,7 +2,16 @@
 
 <% content_for :title, "Boats" %>
 
+
 <h1>Boats</h1>
+
+<%= search_form_for @q, url: boats_path, method: :get, html: { class: "mb-3" } do |f| %>
+  <div class="input-group mb-3">
+    <%= f.label :name_cont, "Name", class: "input-group-text" %>
+    <%= f.search_field :name_cont, class: "form-control", placeholder: "Search by name" %>
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </div>
+<% end %>
 
 
 <table class="table">
