@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :boats
+  end
 resources :users, only: [ :index ] do
   post :impersonate, on: :member
   post :stop_impersonating, on: :collection
