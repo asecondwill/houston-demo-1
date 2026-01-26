@@ -14,7 +14,7 @@ namespace :admin do
     attributes = model_class.columns.reject { |col| %w[id created_at updated_at].include?(col.name) }
     attr_strings = attributes.map { |col| "#{col.name}:#{col.type}" }
 
-    command = "bin/rails generate scaffold_controller admin/#{model_name} #{attr_strings.join(' ')} --model-name=#{model_name}"
+    command = "bin/rails generate admin_scaffold_controller #{model_name} #{attr_strings.join(' ')} --model-name=#{model_name}"
     puts "Running: #{command}"
     system(command)
   rescue NameError
