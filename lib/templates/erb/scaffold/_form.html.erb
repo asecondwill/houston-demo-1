@@ -1,8 +1,5 @@
 <%# frozen_string_literal: true %>
-<%- form_object = class_path.include?('admin') ? "[:admin, @#{singular_table_name}]" : "@#{singular_table_name}" -%>
-<%- show_path = class_path.include?('admin') ? "[:admin, @#{singular_table_name}]" : "@#{singular_table_name}" -%>
-<%- cancel_path = class_path.include?('admin') ? "admin_#{index_helper}_path" : "#{index_helper}_path" -%>
-<%%= simple_form_for(<%= form_object %>) do |f| %>
+<%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
   <%%= errors_for(@<%= singular_table_name %>) %>
 
   <div class="form-inputs">
@@ -12,8 +9,8 @@
   </div>
 
   <div class="form-actions actions">
-    <%%= link_to 'Show', <%= show_path %> if f.object.persisted? %> &nbsp;     
-    <%%= link_to 'Cancel ', <%= cancel_path %> %> &nbsp; 
+    <%%= link_to 'Show', @<%= singular_table_name %> if f.object.persisted? %> &nbsp;     
+    <%%= link_to 'Cancel ', <%= index_helper %>_path %> &nbsp; 
     
     <%%= f.button :submit, class: 'btn-primary' %>
   </div>
