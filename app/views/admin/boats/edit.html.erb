@@ -1,0 +1,11 @@
+<% add_breadcrumb "Boats", admin_boats_path %>
+<% add_breadcrumb "Edit", edit_admin_boat_path(@boat) %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1>Editing Boat</h1>
+    </div>
+
+    <%= render "form", boat: @boat %>
+  </div>
+</div>
