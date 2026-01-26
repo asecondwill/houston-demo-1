@@ -1,5 +1,9 @@
 require "rails/generators/named_base"
-
+# Generator for admin scaffold controllers
+# Example usage:
+#   bin/rails generate admin_scaffold_controller boat name:string description:text length:integer --model-name="Boat"
+# or
+# rake "admin:controller[Boat]"
 class AdminScaffoldControllerGenerator < Rails::Generators::NamedBase
   source_root File.expand_path("templates", __dir__)
 
