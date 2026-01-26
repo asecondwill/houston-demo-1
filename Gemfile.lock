@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/KindlemanHQ/HoustonCMS.git
-  revision: bc2986705a594c13d3b1e445fcf38a5cacbbe9d2
-  tag: v0.1.16
+  revision: f26b4a7090fa971a555db610a4e13b0e0b8a7ca4
+  tag: v0.1.17
   specs:
-    houston_cms (0.1.0)
+    houston_cms (0.1.17)
       acts_as_list
       ancestry
       bootstrap

@@ -83,7 +83,7 @@ gem "devise-bootstrap-views", github: "asecondwill/devise-bootstrap-views"
 gem "pretender"
 gem "pundit"
 # gem "houston_cms", path: "/Users/williambarker/Sites/rails/willsgems/HoustonCMS"
-gem "houston_cms", github: "KindlemanHQ/HoustonCMS", tag: "v0.1.16"
+gem "houston_cms", github: "KindlemanHQ/HoustonCMS", tag: "v0.1.17"
 gem "marksmith"
 
 group :development do
