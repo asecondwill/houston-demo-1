@@ -1,5 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# == Schema Information
+#
+# Table name: boats
+# Database name: primary
+#
+#  id          :integer          not null, primary key
+#  description :text
+#  length      :integer
+#  name        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 one:
   name: Sailboat Alpha
   description: Compact cruising sailboat suitable for coastal trips.
