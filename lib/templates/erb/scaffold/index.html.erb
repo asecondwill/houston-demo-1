@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <h1><%= plural_table_name.titleize %></h1>
+  </div>
+  <div class="card-body">
+    <table class="table ">
+      <thead>
+        <tr>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+          <th scope="col"><%= attribute.human_name %></th>
+    <% end -%>
+          <th colspan="3" scope="col" class="actions"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+          <tr>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+            <td><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></td>
+    <% end -%>
+            <td class="actions">
+              <%%= link_to '<i class="bi bi-eye"></i> Show'.html_safe, <%= model_resource_name %>, class: 'btn btn-primary' %>
+              <%%= link_to '<i class="bi bi-pencil-fill"></i> Edit'.html_safe, edit_<%= singular_route_name %>_path(<%= singular_table_name %>), class: 'btn btn-success' %>
+              <%%= link_to '<i class="bi bi-trash"></i> Destroy'.html_safe , <%= model_resource_name %>, data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      }, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+        <%% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <%%= link_to '<i class="bi bi-plus-circle"></i> New <%= singular_table_name.titleize %>'.html_safe, new_<%= singular_route_name %>_path, class: 'btn btn-success' %>
+
+  </div>
+</div>  
+
+
