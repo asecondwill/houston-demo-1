@@ -1,12 +1,11 @@
-<% content_for :title, "Editing boat" %>
+<div class="card">
+  <div class="card-header">
+    <h1>Editing Boats</h1>
 
-<h1>Editing boat</h1>
-
-<%= render "form", boat: @boat %>
-
-<br>
-
-<div>
-  <%= link_to "Show this boat", [:admin, @boat] %> |
-  <%= link_to "Back to boats", admin_boats_path %>
+  </div>
+  <div class="card-body">
+    <%= render 'form', boat: @boat %>   
+  </div>
 </div>
+
+

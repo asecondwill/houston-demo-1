@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="card">
+  <div class="card-header">
+    <h1>Boats</h1>
+  </div>
+  <div class="card-body">
+    
 
-<%= render @boat %>
+    
+          <b>Name:</b>
+     <%= @boat.name %> <br>
+          <b>Description:</b>
+     <%= @boat.description %> <br>
+          <b>Length:</b>
+     <%= @boat.length %> <br>
+        
+    <%= link_to 'Edit', edit_boat_path(@boat) %> |
+    <%= link_to 'Back', admin_boats_path %>
 
-<div>
-  <%= link_to "Edit this boat", edit_admin_boat_path(@boat) %> |
-  <%= link_to "Back to boats", admin_boats_path %>
-
-  <%= button_to "Destroy this boat", [:admin, @boat], method: :delete %>
-</div>
+  </div>
+</div>  
