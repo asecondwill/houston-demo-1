@@ -12,7 +12,7 @@
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
             <th><%= attribute.human_name %></th>
 <% end -%>
-            <th colspan="3">Actions</th>
+            <th colspan="3" class="actions">Actions</th>
           </tr>
         </thead>
 
@@ -22,10 +22,13 @@
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
               <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
-              <td><%%= link_to "Show", [:admin, <%= singular_table_name %>], class: "btn btn-sm btn-outline-primary" %></td>
-              <td><%%= link_to "Edit", edit_admin_<%= singular_table_name %>_path(<%= singular_table_name %>), class: "btn btn-sm btn-outline-secondary" %></td>
-              <td><%%= link_to "Destroy", [:admin, <%= singular_table_name %>], method: :delete,
-                              confirm: "Are you sure?", class: "btn btn-sm btn-outline-danger" %></td>
+              <td class="actions">
+                <%%= link_to "Show", [:admin, <%= singular_table_name %>], class: "btn btn-sm btn-outline-primary" %>
+                <%%= link_to "Edit", edit_admin_<%= singular_table_name %>_path(<%= singular_table_name %>), class: "btn btn-sm btn-outline-secondary" %>
+              <td><%%= link_to "Destroy", [:admin, <%= singular_table_name %>], 
+                              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, 
+                              class: "btn btn-sm btn-outline-danger" %></td>
+              </td>
             </tr>
           <%% end %>
         </tbody>
